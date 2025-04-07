@@ -15,6 +15,7 @@ class NaverClientConfigurationTest extends Specification {
         def template = new RequestTemplate()
         def clientId = "id"
         def clientSecret = "secret"
+        //세팅이되는지확인
 
         and: "interceptor를 타기전에 header가 존재하지 않는다."
         template.headers()["X-Naver-Client-Id"] == null

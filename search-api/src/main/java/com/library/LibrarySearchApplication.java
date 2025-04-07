@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @EnableAsync
 @EnableFeignClients(clients = {NaverClient.class, KakaoClient.class})
-@SpringBootApplication
+@SpringBootApplication//모듈을 만들어서 구동시키려면
 public class LibrarySearchApplication {
     public static void main(String[] args) {
         SpringApplication.run(LibrarySearchApplication.class, args);

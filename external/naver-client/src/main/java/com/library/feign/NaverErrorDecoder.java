@@ -23,7 +23,7 @@ public class NaverErrorDecoder implements ErrorDecoder {
     @Override
     public Exception decode(String methodKey, Response response) {
         try {
-            String body = new String(response.body().asInputStream().readAllBytes(), StandardCharsets.UTF_8);
+            String body = new String(response.body().asInputStream().readAllBytes(), StandardCharsets.UTF_8);//바디를 읽어서 스트링으로 변환
             NaverErrorResponse errorResponse = objectMapper.readValue(body, NaverErrorResponse.class);
             throw new ApiException(errorResponse.getErrorMessage(), ErrorType.EXTERNAL_API_ERROR, HttpStatus.valueOf(response.status()));
         } catch (IOException e) {

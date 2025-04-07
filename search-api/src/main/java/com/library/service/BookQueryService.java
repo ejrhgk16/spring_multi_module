@@ -27,7 +27,7 @@ public class BookQueryService {
     }
 
     public PageResult<SearchResponse> searchFallBack(String query, int page, int size, Throwable throwable) {
-        if (throwable instanceof CallNotPermittedException) {
+        if (throwable instanceof CallNotPermittedException) {//서킷이열렸을때 발생한 에러
             return handleOpenCircuit(query, page, size);
         }
         return handleException(query, page, size, throwable);

@@ -25,6 +25,24 @@ class BookControllerItTest extends Specification {
 
     @SpringBean
     BookQueryService bookQueryService = Mock()
+//
+//    MockMvc
+//            정의: MockMvc는 웹 애플리케이션을 서버에 배포하지 않고도 스프링 MVC의 동작을 재현할 수 있게 해주는 테스트 프레임워크입니다.
+//
+//            목적:
+//
+//    HTTP 요청을 시뮬레이션하여 컨트롤러를 테스트합니다.
+//
+//            전체 스프링 MVC 인프라를 사용하지 않고도 컨트롤러의 동작을 검증할 수 있습니다.
+//
+//            특징:
+//
+//    실제 서버를 구동하지 않아 테스트 속도가 빠릅니다.
+//
+//            스프링의 웹 애플리케이션 컨텍스트를 로드하여 통합 테스트 환경을 제공합니다.
+//
+//            perform 메소드
+//    정의: MockMvc의 메소드로, 가상의 HTTP 요청을 수행합니다.
 
     def "정상인자로 요청시 성공한다."() {
         given:

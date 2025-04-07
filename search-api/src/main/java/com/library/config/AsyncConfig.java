@@ -21,6 +21,7 @@ public class AsyncConfig implements AsyncConfigurer {
         // 설정값은 상황에 따라 설정
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         int cpuCoreCount = Runtime.getRuntime().availableProcessors();
+        //코어풀사이즈 가득차면 -> 큐사이즈만큼 큐에 쌓임 -> 큐에도 다 찼으면 맥스풀사이즈만큼 스레드가 늘어남
         executor.setCorePoolSize(cpuCoreCount);
         executor.setMaxPoolSize(cpuCoreCount * 2);
         executor.setQueueCapacity(10);

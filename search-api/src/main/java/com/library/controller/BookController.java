@@ -27,7 +27,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/v1/books")
+@RequestMapping("/v1/books")//버전컨트롤용 운영중에 v1 v2신규로 올라갈경우 >> 소비처가 v2로 바라보게만 하면됨
 @Tag(name = "book", description = "book api")
 public class BookController {
     private final BookApplicationService bookApplicationService;

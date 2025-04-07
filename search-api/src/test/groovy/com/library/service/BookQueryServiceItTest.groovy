@@ -73,7 +73,7 @@ class BookQueryServiceItTest extends Specification {
         1 * kakaoBookRepository.search(keyword, page, size) >> kakaoResponse
 
         and: "circuit이 OPEN된다."
-        def circuitBreaker = circuitBreakerRegistry.getAllCircuitBreakers().stream().findFirst().get()
+        def circuitBreaker = circuitBreakerRegistry.getAllCircuitBreakers().stream().findFirst().get()//서킷브레이크 상태값가져오기, 특정 서킷으로 가져오려면 circuitBreaker = circuitBreakerRegistry.circuitBreaker("specificName");
         circuitBreaker.state == CircuitBreaker.State.OPEN
 
         and:
